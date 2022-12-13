@@ -24,9 +24,24 @@ module.exports = () => {
     module: {
       rules: [
         {
-          // regex pattern ends with .css
+          // CSS loaders
           test: /\.css$/i,
           use: ["style-loader", "css-loader"],
+        },
+        // babel
+        {
+          test: /\.m?js$/,
+          exclude: /node_modules|/,
+          use: {
+            loader: "babel-loader",
+            options: {
+              presets: ["@babel/preset-env"],
+              plugins: [
+                "@babel/plugin-proposal-object-rest-sprea",
+                "@babel/transform-runtime",
+              ],
+            },
+          },
         },
       ],
     },
