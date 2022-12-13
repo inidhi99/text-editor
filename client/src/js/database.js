@@ -1,5 +1,7 @@
+// Import the 'idb' package to use with IndexedDB.
 import { openDB } from "idb";
 
+// Create a function that can be used to start up the database
 const initdb = async () =>
   openDB("jate", 1, {
     upgrade(db) {
