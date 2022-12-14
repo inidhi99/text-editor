@@ -15,7 +15,7 @@ module.exports = () => {
       install: "./src/js/install.js",
     },
     output: {
-      filename: "[name].js",
+      filename: "[name].bundle.js",
       path: path.resolve(__dirname, "dist"),
     },
     plugins: [
@@ -46,6 +46,7 @@ module.exports = () => {
           {
             src: path.resolve("src/images/logo.png"),
             sizes: [96, 128, 192, 256, 384, 512],
+            destination: path.join("assets", "icons"),
           },
         ],
       }),
